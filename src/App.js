@@ -5,9 +5,12 @@ import Main from "./components/Main/Main.js";
 
 function App() {
   const [searchValue, setSearchValue] = useState("");
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState([]);
+
+  console.log(user);
 
   useEffect(() => {
+    console.log(searchValue);
     if (searchValue) {
       doFetch(searchValue);
     }
@@ -21,17 +24,15 @@ function App() {
       throw new Error(response.statusText);
     } else {
       let data = await response.json();
-      setUser(data);
-      console.log(data); // github users list
+      setUser(data.items);
+      console.log(data.items); // github users list
     }
   }
 
   function handleSubmit(ev) {
     ev.preventDefault(); // prevents refreshing of the page after submitting
-    console.log("event ", ev);
-    console.log("value ", ev.target[0].value); // form value
-    console.log("form submitted");
     setSearchValue(ev.target[0].value); // set search value after form submitted
+    console.log(ev.target[0].value);
   }
 
   // runs with any change
@@ -42,15 +43,18 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <form className="input" onPerfEntry={handleSubmit}>
+      <form className="input" onSubmit={handleSubmit}>
         <input
           onChange={handleChange}
-          placeholder="enter a user name"
+          placeholder="User name"
           type="text"
+          className="input"
         />
-        <button type="submit">Search</button>
-        <Main user={user} />
+        <button type="submit" className="button">
+          Search
+        </button>
       </form>
+      <Main user={user} />
     </div>
   );
 }

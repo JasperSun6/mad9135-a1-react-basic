@@ -1,11 +1,14 @@
 import React from "react";
 
 function List({ item }) {
-  let logInName = item.login;
+  let logInName = item.login[0].toUpperCase() + item.login.slice(1);
   let avatar = item.avatar_url;
 
   return (
-    (<li>{`login Name: ${logInName}`}</li>), (<li>{`Avatar: ${avatar}`}</li>)
+    <li className="card">
+      <p className="userName">{logInName}</p>
+      <img src={avatar} className="avatar" alt="avatar" />
+    </li>
   );
 }
 

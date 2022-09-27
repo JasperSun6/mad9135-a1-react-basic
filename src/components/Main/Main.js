@@ -3,11 +3,11 @@ import List from "../List/List";
 
 function Main({ user }) {
   if (user.length === 0) {
-    return <p>Welcome! Please enter a user name</p>;
+    return <p className="welcome">Welcome! Please search a user name.</p>;
   } else {
     return (
       <ul>
-        {user.user.map((item) => (
+        {user.map((item) => (
           <List key={item.login} item={item} />
         ))}
       </ul>

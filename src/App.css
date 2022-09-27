@@ -1,38 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap');
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1{
+    padding: 2rem; 
+    text-align:center;
+    color: whitesmoke;
+    background-color: #2c3e50;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.welcome{
+  font-size: 2em;
+  color: #2c3e50;
+  font-weight: bold;
+  font-family: 'Mouse Memoirs', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ul{
+  padding: 0 2rem;
+}
+
+.input{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap:1rem;
+  border-radius:0.35rem;
+  color: #2c3e50;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+.card{
+padding:none;
+display: flex;
+flex-direction: column;
+justify-content: center;
+border: 2px solid  #2c3e50;
+border-radius: 15px;
+list-style: none;
+margin-bottom:1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.userName{
+  font-size: 1.75rem;
+  color: #2c3e50;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
 }
+
+.avatar{
+  width: 100px;
+  height: 100px;
+  border-radius: 17%;
+  padding-bottom: 1rem;
+  margin: 0 auto;
+}
+
+img {
+
+  min-width:13rem;
+  max-width: 15rem;
+  min-height:13rem;
+  max-height: 15rem;
+}
+
+/* From uiverse.io by @nikk7007 */
+.button {
+  --color: #2c3e50;
+  padding: 0.8em 1.7em;
+  background-color: transparent;
+  border-radius: .45rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: .5s;
+  font-weight: 400;
+  font-size: 17px;
+  border: 1px solid;
+  font-family: inherit;
+  color: var(--color);
+  z-index: 1;
+ }
+ 
+ .button::before, .button::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--color);
+  transition: 1s ease;
+ }
+ 
+ .button::before {
+  top: -1em;
+  left: -1em;
+ }
+ 
+ .button::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+ }
+ 
+ .button:hover::before, .button:hover::after {
+  height: 410px;
+  width: 410px;
+ }
+ 
+ .button:hover {
+  color: rgb(255, 255, 255);
+ }
+ 
+ .button:active {
+  filter: brightness(.8);
+ }
+ 

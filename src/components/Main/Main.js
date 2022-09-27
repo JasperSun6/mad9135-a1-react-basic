@@ -1,5 +1,6 @@
 import React from "react";
 import List from "../List/List";
+import UserDetail from "../UserModal/UserModal";
 
 function Main({ user }) {
   if (user.length === 0) {

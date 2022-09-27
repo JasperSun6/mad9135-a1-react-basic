@@ -5,6 +5,7 @@
 }
 
 h1{
+    margin-top:0;
     padding: 2rem; 
     text-align:center;
     color: whitesmoke;
@@ -63,9 +64,9 @@ margin-bottom:1rem;
 img {
 
   min-width:13rem;
-  max-width: 15rem;
+  max-width: 16rem;
   min-height:13rem;
-  max-height: 15rem;
+  max-height: 16rem;
 }
 
 /* From uiverse.io by @nikk7007 */

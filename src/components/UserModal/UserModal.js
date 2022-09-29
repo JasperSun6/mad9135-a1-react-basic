@@ -5,11 +5,7 @@ function UserModal({ user }) {
   let followers = user.followers;
   let following = user.following;
 
-  //   const response = await fetch(`https://api.github.com/users/${user.login}`);
-  //   if (!response.ok) {
-  //     throw new Error(response.statusText);
-  //   } else {
-
+  console.log(user);
   return (
     <Modal>
       <div className="userDetail">

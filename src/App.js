@@ -29,6 +29,7 @@ function App() {
   function handleSubmit(ev) {
     ev.preventDefault(); // prevents refreshing of the page after submitting
     setSearchValue(ev.target[0].value); // set search value after form submitted
+    console.log(ev.target[0].value);
   }
 
   // runs with any change

@@ -3,9 +3,12 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main.js";
 
+import UserModal from "./components/UserModal/UserModal";
+
 function App() {
   const [searchValue, setSearchValue] = useState("");
   const [user, setUser] = useState([]);
+  const [selectedUser, setSelectedUser] = useState({});
 
   useEffect(() => {
     if (searchValue) {
@@ -37,6 +40,16 @@ function App() {
     console.log("change value to: ", ev.target.value); // change value, good for auto-completing
   }
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
   return (
     <div className="App">
       <Header />
@@ -51,7 +64,14 @@ function App() {
           Search
         </button>
       </form>
-      <Main user={user} />
+      <Main
+        user={user}
+        setSelectedUser={setSelectedUser}
+        openModal={openModal}
+      />
+      {isOpen && (
+        <UserModal selectedUser={selectedUser} closeModal={closeModal} />
+      )}
     </div>
   );
 }

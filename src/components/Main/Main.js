@@ -1,15 +1,28 @@
 import React from "react";
 import List from "../List/List";
-import UserDetail from "../UserModal/UserModal";
 
-function Main({ user }) {
+function Main({ user, openModal, setSelectedUser }) {
   if (user.length === 0) {
-    return <p className="welcome">Welcome! Please search a user name.</p>;
+    return (
+      <p className="welcome">
+        Welcome!
+        <br />
+        Please search a user name.
+        <br />
+        Click each user card to see more details.{" "}
+      </p>
+    );
   } else {
     return (
       <ul>
+        <p className="welcome">Search Results</p>
         {user.map((item) => (
-          <List key={item.login} item={item} />
+          <List
+            key={item.login}
+            item={item}
+            openModal={openModal}
+            setSelectedUser={setSelectedUser}
+          />
         ))}
       </ul>
     );

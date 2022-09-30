@@ -1,21 +1,24 @@
 import React from "react";
-import Modal from "react-modal";
 
-function UserModal({ user }) {
-  let followers = user.followers;
-  let following = user.following;
+function UserModal({ closeModal, selectedUser }) {
+  console.log(selectedUser);
+  let followers = selectedUser.followers;
+  let following = selectedUser.following;
 
-  console.log(user);
   return (
-    <Modal>
+    <div className="modal">
       <div className="userDetail">
-        <p className="userName">{user.login}</p>
-        <img src={user.avatar_url} className="avatar" alt="avatar" />
-        <p className="followers">Followers: {followers}</p>
-        <p className="following">Following: {following}</p>
-        <button className="button">Close</button>
+        <p className="userName">{selectedUser.login}</p>
+        <img src={selectedUser.avatar_url} className="avatar" alt="avatar" />
+        <div className="follow">
+          <p className="followers">Followers: {followers}</p>
+          <p className="following">Following: {following}</p>
+        </div>
+        <button className="button" onClick={closeModal}>
+          Close
+        </button>
       </div>
-    </Modal>
+    </div>
   );
 }
 

@@ -25,13 +25,17 @@ function App() {
     } else {
       let data = await response.json();
       setUser(data.items);
-      console.log(data.items); // github users list
+      console.log(data.items);
     }
   }
 
   function handleSubmit(ev) {
     ev.preventDefault(); // prevents refreshing of the page after submitting
-    setSearchValue(ev.target[0].value); // set search value after form submitted
+    if (ev.target[0].value === "") {
+      alert("Please enter a user name");
+    } else {
+      setSearchValue(ev.target[0].value);
+    } // set search value after form submitted
     console.log(ev.target[0].value);
   }
 

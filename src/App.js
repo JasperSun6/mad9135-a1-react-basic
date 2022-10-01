@@ -24,15 +24,18 @@ function App() {
       throw new Error(response.statusText);
     } else {
       let data = await response.json();
-      setUser(data.items);
-      console.log(data.items);
+      if (data.items.length === 0) {
+        alert("No user found, please try to search again.");
+      } else {
+        setUser(data.items);
+      }
     }
   }
 
   function handleSubmit(ev) {
     ev.preventDefault(); // prevents refreshing of the page after submitting
     if (ev.target[0].value === "") {
-      alert("Please enter a user name");
+      alert("Please enter a user name.");
     } else {
       setSearchValue(ev.target[0].value);
     } // set search value after form submitted

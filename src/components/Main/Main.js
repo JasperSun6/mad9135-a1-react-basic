@@ -14,17 +14,19 @@ function Main({ user, openModal, setSelectedUser }) {
     );
   } else {
     return (
-      <ul>
+      <div>
         <p className="welcome">Search Results</p>
-        {user.map((item) => (
-          <List
-            key={item.login}
-            item={item}
-            openModal={openModal}
-            setSelectedUser={setSelectedUser}
-          />
-        ))}
-      </ul>
+        <ul>
+          {user.map((item) => (
+            <List
+              key={item.login}
+              item={item}
+              openModal={openModal}
+              setSelectedUser={setSelectedUser}
+            />
+          ))}
+        </ul>
+      </div>
     );
   }
 }
